@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>2048 在线版</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="game-page">
+      <header class="page-header">
+        <div class="title-group">
+          <h1 class="game-title">2048</h1>
+          <div class="subtitle">合并数字，凑出 2048！支持键盘和触控滑动</div>
+        </div>
+        <div class="score-group">
+          <div class="score-box">
+            <div class="score-label">得分</div>
+            <div id="score" class="score-value">0</div>
+          </div>
+          <div class="score-box">
+            <div class="score-label">最佳</div>
+            <div id="best" class="score-value">0</div>
+          </div>
+          <button id="new-game" class="btn primary">新开一局</button>
+        </div>
+      </header>
+
+      <main class="game-container">
+        <div class="board" id="board" aria-label="2048 棋盘" role="application"></div>
+        <div id="overlay" class="overlay hidden" aria-live="polite" aria-atomic="true">
+          <div class="overlay-card">
+            <div id="overlay-message" class="overlay-message">游戏结束</div>
+            <div class="overlay-actions">
+              <button id="keep-going" class="btn">继续游戏</button>
+              <button id="try-again" class="btn primary">再来一次</button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="page-footer">
+        <div class="hint">提示：使用方向键或在手机上滑动控制方向</div>
+        <div class="hint">合并相同数字，目标是得到 2048</div>
+      </footer>
+    </div>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
